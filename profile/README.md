@@ -1,4 +1,4 @@
-<!-- markdownlint-disable -->
+<!-- markdownlint-disable MD033 MD041 MD045 -->
 <p align="center">
   <img src="https://raw.githubusercontent.com/yogsoth-ai/.github/main/assets/yogsoth-banner.svg" alt="Yogsoth AI" width="600"/>
 </p>
@@ -21,7 +21,7 @@ No frameworks. No application code. No Docker containers. **900+ pure-markdown s
 
 Four-layer military command hierarchy. Each layer calls only the layer below it:
 
-```
+```bash
 Campaign (45+)  — WHAT to research    (full research stages)
 Strategy (200+) — WHEN and WHY        (iteration loops, stopping conditions)
 Tactic (120+)   — HOW to combine      (orchestrates multiple SOPs)
@@ -35,7 +35,7 @@ This is not a pipeline. It is an arsenal — a strategy book the AI reads, then 
 ## Core
 
 | Repository | What it does |
-|---|---|
+| ---------- | ------------ |
 | [**de-anthropocentric-research-engine**](https://github.com/yogsoth-ai/de-anthropocentric-research-engine) | The distribution. 900+ skills unified under one orchestrator. Clone once, get everything. |
 | [**wiki-vault**](https://github.com/yogsoth-ai/wiki-vault) | Knowledge graph MCP server — BM25 full-text search, typed edges, batch validation. Persistent research memory. |
 | [**semantic-scholar-mcp**](https://github.com/yogsoth-ai/semantic-scholar-mcp) | Semantic Scholar API as MCP — paper lookup, citation tracing, recommendations, author search. |
@@ -45,7 +45,7 @@ This is not a pipeline. It is an arsenal — a strategy book the AI reads, then 
 Nine freely-composable research packages. There is no fixed order — CC reads the catalog and routes across them as the research demands. Each is a standalone repo with full Campaign → Strategy → Tactic → SOP structure:
 
 | Package | Purpose |
-|---|---|
+| ------- | ------- |
 | [north-star-crystallization](https://github.com/yogsoth-ai/north-star-crystallization) | Direction finding — cold/warm/hot-start dialogue to crystallize research goals |
 | [knowledge-acquisition](https://github.com/yogsoth-ai/knowledge-acquisition) | Systematic literature survey, citation chaining, patent mining, meta-analysis |
 | [deep-insight](https://github.com/yogsoth-ai/deep-insight) | Gap analysis, structural understanding, abstraction extraction |
@@ -59,7 +59,7 @@ Nine freely-composable research packages. There is no fixed order — CC reads t
 ## Infrastructure
 
 | Repository | Role |
-|---|---|
+| ---------- | ---- |
 | [literature-engine](https://github.com/yogsoth-ai/literature-engine) | Full-text paper reading enforcement via AlphaXiv |
 | [web-browsing](https://github.com/yogsoth-ai/web-browsing) | Rigorous web research — prevents shallow snippet-only analysis |
 | [subagent-spawning](https://github.com/yogsoth-ai/subagent-spawning) | Parallel research dispatch with full MCP tool access |
@@ -77,7 +77,7 @@ npm install
 
 Copy `mcp.example.json` → `.mcp.json`, add your API keys, then:
 
-```
+```bash
 /de-anthropocentric-research-engine
 ```
 
@@ -90,6 +90,7 @@ The orchestrator handles the rest.
 **v3.1.0** — shipped. 900+ skills across 9 freely-composable packages, 8 orchestrator skills, 6 MCP integrations, non-linear execution with backtracking. Fully self-contained: the entire skill→skill dependency graph is encoded inline in frontmatter and machine-verified closed.
 
 **Next:**
+
 - Skill ablation — systematic reduction of the 900+ skill corpus via ablation study
 - Cross-device session management — persistent research state across machines
 - Paper-writing skills — from research output to publishable manuscript
