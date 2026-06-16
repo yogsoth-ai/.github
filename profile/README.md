@@ -13,7 +13,7 @@
 
 We build autonomous research systems where the AI decides what to search, what to read, which gaps matter, and which ideas are worth pursuing. The human provides direction and ethical floors. Everything else is autonomous.
 
-No frameworks. No application code. No Docker containers. **800+ pure-markdown skill files executed natively by Claude Code.** The LLM is the runtime.
+No frameworks. No application code. No Docker containers. **900+ pure-markdown skill files executed natively by Claude Code**, organized as 9 freely-composable research packages. The LLM is the runtime.
 
 ---
 
@@ -22,13 +22,13 @@ No frameworks. No application code. No Docker containers. **800+ pure-markdown s
 Four-layer military command hierarchy. Each layer calls only the layer below it:
 
 ```
-Campaign (8)    — WHAT to research    (full research stages)
-Strategy (40+)  — WHEN and WHY        (iteration loops, stopping conditions)
-Tactic (100+)   — HOW to combine      (orchestrates multiple SOPs)
-SOP (600+)      — HOW to execute      (single-responsibility operations)
+Campaign (45+)  — WHAT to research    (full research stages)
+Strategy (200+) — WHEN and WHY        (iteration loops, stopping conditions)
+Tactic (120+)   — HOW to combine      (orchestrates multiple SOPs)
+SOP (500+)      — HOW to execute      (single-responsibility operations)
 ```
 
-This is not a pipeline. It is an arsenal — a strategy book the AI reads, then decides how to act. Non-linear routing. Explicit backtrack conditions. The agent chooses which campaign to invoke, which strategies to combine, and when to retreat.
+This is not a pipeline. It is an arsenal — a strategy book the AI reads, then decides how to act. The 9 research packages are freely composable with no fixed order. Non-linear routing. Explicit backtrack conditions. The agent chooses which package to invoke, which strategies to combine, and when to retreat.
 
 ---
 
@@ -36,15 +36,15 @@ This is not a pipeline. It is an arsenal — a strategy book the AI reads, then 
 
 | Repository | What it does |
 |---|---|
-| [**de-anthropocentric-research-engine**](https://github.com/yogsoth-ai/de-anthropocentric-research-engine) | The distribution. 800+ skills unified under one orchestrator. Clone once, get everything. |
+| [**de-anthropocentric-research-engine**](https://github.com/yogsoth-ai/de-anthropocentric-research-engine) | The distribution. 900+ skills unified under one orchestrator. Clone once, get everything. |
 | [**wiki-vault**](https://github.com/yogsoth-ai/wiki-vault) | Knowledge graph MCP server — BM25 full-text search, typed edges, batch validation. Persistent research memory. |
 | [**semantic-scholar-mcp**](https://github.com/yogsoth-ai/semantic-scholar-mcp) | Semantic Scholar API as MCP — paper lookup, citation tracing, recommendations, author search. |
 
-## Research Campaigns
+## Research Packages
 
-Eight autonomous research stages. Each is a standalone repo with full Campaign → Strategy → Tactic → SOP structure:
+Nine freely-composable research packages. There is no fixed order — CC reads the catalog and routes across them as the research demands. Each is a standalone repo with full Campaign → Strategy → Tactic → SOP structure:
 
-| Campaign | Purpose |
+| Package | Purpose |
 |---|---|
 | [north-star-crystallization](https://github.com/yogsoth-ai/north-star-crystallization) | Direction finding — cold/warm/hot-start dialogue to crystallize research goals |
 | [knowledge-acquisition](https://github.com/yogsoth-ai/knowledge-acquisition) | Systematic literature survey, citation chaining, patent mining, meta-analysis |
@@ -54,6 +54,7 @@ Eight autonomous research stages. Each is a standalone repo with full Campaign �
 | [convergence](https://github.com/yogsoth-ai/convergence) | Multi-criteria scoring, Pareto frontier, pairwise ranking, dialectical synthesis |
 | [stress-test](https://github.com/yogsoth-ai/stress-test) | Adversarial validation — assumption destruction, red-teaming, worst-case design |
 | [experiment-execution](https://github.com/yogsoth-ai/experiment-execution) | Factor-level design, parameter screening, sensitivity analysis, result collection |
+| [knowledge-structuring](https://github.com/yogsoth-ai/knowledge-structuring) | Ontology building, causal modeling, dimensional analysis, argument mapping (wiki vault) |
 
 ## Infrastructure
 
@@ -63,8 +64,6 @@ Eight autonomous research stages. Each is a standalone repo with full Campaign �
 | [web-browsing](https://github.com/yogsoth-ai/web-browsing) | Rigorous web research — prevents shallow snippet-only analysis |
 | [subagent-spawning](https://github.com/yogsoth-ai/subagent-spawning) | Parallel research dispatch with full MCP tool access |
 | [context-management](https://github.com/yogsoth-ai/context-management) | Session checkpointing — 500+ line markdown snapshots for recovery |
-| [literature-survey](https://github.com/yogsoth-ai/literature-survey) | 5 survey paradigms (scoping, systematic, deep, narrative, snowball) |
-| [knowledge-structuring](https://github.com/yogsoth-ai/knowledge-structuring) | Ontology building, causal modeling, argument mapping |
 
 ---
 
@@ -88,10 +87,10 @@ The orchestrator handles the rest.
 
 ## Status
 
-**v3.0.0** — shipped. 800+ skills, 9 orchestrator skills, 5 MCP integrations, non-linear execution with backtracking.
+**v3.1.0** — shipped. 900+ skills across 9 freely-composable packages, 8 orchestrator skills, 6 MCP integrations, non-linear execution with backtracking. Fully self-contained: the entire skill→skill dependency graph is encoded inline in frontmatter and machine-verified closed.
 
 **Next:**
-- Skill ablation — systematic reduction of the 800+ skill corpus via ablation study
+- Skill ablation — systematic reduction of the 900+ skill corpus via ablation study
 - Cross-device session management — persistent research state across machines
 - Paper-writing skills — from research output to publishable manuscript
 
