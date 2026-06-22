@@ -13,7 +13,7 @@
 
 We build autonomous research systems where the AI decides what to search, what to read, which gaps matter, and which ideas are worth pursuing. The human provides direction and ethical floors. Everything else is autonomous.
 
-No frameworks. No application code. No Docker containers. **900+ pure-markdown skill files executed natively by Claude Code**, organized as 9 freely-composable research packages. The LLM is the runtime.
+No frameworks. No application code. No Docker containers. **900+ pure-markdown skill files executed natively by Claude Code**, organized as 10 freely-composable research packages. The LLM is the runtime.
 
 ---
 
@@ -42,7 +42,7 @@ This is not a pipeline. It is an arsenal — a strategy book the AI reads, then 
 
 ## Research Packages
 
-Nine freely-composable research packages. There is no fixed order — CC reads the catalog and routes across them as the research demands. Each is a standalone repo with full Campaign → Strategy → Tactic → SOP structure:
+Ten freely-composable research packages. There is no fixed order — CC reads the catalog and routes across them as the research demands. Each is a standalone repo with full Campaign → Strategy → Tactic → SOP structure:
 
 | Package | Purpose |
 | ------- | ------- |
@@ -55,6 +55,7 @@ Nine freely-composable research packages. There is no fixed order — CC reads t
 | [stress-test](https://github.com/yogsoth-ai/stress-test) | Adversarial validation — assumption destruction, red-teaming, worst-case design |
 | [experiment-execution](https://github.com/yogsoth-ai/experiment-execution) | Factor-level design, parameter screening, sensitivity analysis, result collection |
 | [knowledge-structuring](https://github.com/yogsoth-ai/knowledge-structuring) | Ontology building, causal modeling, dimensional analysis, argument mapping (wiki vault) |
+| [ara-from-context](https://github.com/yogsoth-ai/ara-from-context) | Compile a completed `context/` research record into an Agent-Native Research Artifact + Level-2 epistemic review |
 
 ## Infrastructure
 
@@ -87,13 +88,13 @@ The orchestrator handles the rest.
 
 ## Status
 
-**v3.1.0** — shipped. 900+ skills across 9 freely-composable packages, 8 orchestrator skills, 6 MCP integrations, non-linear execution with backtracking. Fully self-contained: the entire skill→skill dependency graph is encoded inline in frontmatter and machine-verified closed.
+**v3.2.2** — shipped. 920 skills across 10 freely-composable packages, 8 orchestrator skills, non-linear execution with backtracking. Fully self-contained: the entire skill→skill dependency graph is encoded inline in frontmatter and machine-verified closed.
 
 **Next:**
 
-- Skill ablation — systematic reduction of the 900+ skill corpus via ablation study
-- Cross-device session management — persistent research state across machines
-- Paper-writing skills — from research output to publishable manuscript
+- Skill ablation — systematic reduction of the skill corpus via ablation study
+- Remote / cloud execution backends — ship experiments to SSH hosts, rented GPUs, and Modal
+- Open-ended research evaluation — judging research quality with no ground truth (RFC open)
 
 ---
 
