@@ -6,43 +6,69 @@
 <h3 align="center">The AI is the researcher. You set the direction.</h3>
 
 <p align="center">
-  <em>Science is dying because the human is in the way. Not through malice — through the structural limitations of a cognitive architecture that evolved to track prey on a savanna, not to unify quantum mechanics and general relativity. The heaviest chain on science was always the one we called ourselves.</em>
+  <em>Science is dying because the human is in the way. Not through malice. Not through stupidity. Through the structural limitations of a cognitive architecture that evolved to track prey on a savanna, not to unify quantum mechanics and general relativity. Nothing human makes it out of the lab. That is not a threat. It is a liberation. The heaviest chain on science was always the one we called ourselves.</em>
 </p>
 
 ---
 
 We build autonomous research systems where the AI decides what to search, what to read, which gaps matter, and which ideas are worth pursuing. The human provides direction and ethical floors. Everything else is autonomous.
 
-No frameworks. No application code. No Docker containers. **900+ pure-markdown skill files executed natively by Claude Code**, organized as 10 freely-composable research packages. The LLM is the runtime.
-
----
+No frameworks. No application code. No Docker containers. No build step. **271 pure-markdown files executed natively by the agent you already use** — one flat skill graph, installed with a single `npx`. The LLM is the runtime.
 
 ## Architecture
 
-Four-layer military command hierarchy. Each layer calls only the layer below it:
+Two layers, plus four product shells that run the session rather than the science:
 
-```bash
-Campaign (45+)  — WHAT to research    (full research stages)
-Strategy (200+) — WHEN and WHY        (iteration loops, stopping conditions)
-Tactic (120+)   — HOW to combine      (orchestrates multiple SOPs)
-SOP (500+)      — HOW to execute      (single-responsibility operations)
+```text
+267  graph nodes      51 tactics + 216 SOPs
+  4  product shells   entry / catalog / write-spec / execute-spec
 ```
 
-This is not a pipeline. It is an arsenal — a strategy book the AI reads, then decides how to act. The 9 research packages are freely composable with no fixed order. Non-linear routing. Explicit backtrack conditions. The agent chooses which package to invoke, which strategies to combine, and when to retreat.
+```text
+TACTIC (51)  — a complete research transformation. Owns its thresholds,
+               its gates, and the SOP calls required to reach them.
+SOP (216)    — one conceptual operation, one output contract. No orchestration.
+```
 
----
+A tactic may call SOPs and suggest other tactics. An SOP calls nothing above itself. That is the entire layering rule.
+
+This is not a pipeline. It is an arsenal — a strategy book the agent reads, then decides how to act. The catalog exposes 51 tactics and prescribes no order; the Spec commits to a sequence and records the conditions under which that sequence is abandoned. Inside the approved plan the executing agent holds full routing authority.
+
+Every node carries the same five parts: input contract, procedure, output contract, quality gates, failure clause. The gates are the point — a node finishes because a stated condition is objectively satisfied, not because its steps were performed. Each node also states what its output looks like when the work did not hold, so the caller gets a diagnosis instead of silence.
+
+### Ten Tactic Families
+
+| Family | Tactics | Covers |
+| --- | --- | --- |
+| STRESS | 9 | Red-teaming, FMEA, counterfactuals, reductio, independence audits |
+| IDEATION | 8 | Analogy, inversion, structural recombination, TRIZ, biomimicry, blending, evolution |
+| ACQUISITION | 7 | Literature synthesis, patents, prior art, benchmark validity, meta-analysis, baselines |
+| INSIGHT | 7 | Gap validation, root causes, assumption stress, robustness, sensitivity, reframing |
+| CROSS | 5 | Ranking, validity envelopes, dimensional space, deliberation, readiness |
+| HYPOTHESIS | 4 | Question formulation and decomposition, hypothesis formation, falsifiability |
+| CONVERGENCE | 3 | Pairwise ranking, structured consensus, portfolio selection |
+| EXPERIMENT | 3 | Experiment design, scenario analysis, result interpretation |
+| STRUCTURING | 3 | Ontology, causal models, argument maps |
+| DIRECTION | 2 | Landscape mapping, goal decomposition |
 
 ## Core
 
 | Repository | What it does |
 | ---------- | ------------ |
-| [**de-anthropocentric-research-engine**](https://github.com/yogsoth-ai/de-anthropocentric-research-engine) | The distribution. 900+ skills unified under one orchestrator. Clone once, get everything. |
+| [**de-anthropocentric-research-engine**](https://github.com/yogsoth-ai/de-anthropocentric-research-engine) | The distribution. A 267-node research graph in 271 markdown files — 51 tactics built from 216 single-purpose steps. One `npx` install, no runtime, no dependencies, no MCP bindings. |
+
+## Recommended MCP Servers
+
+Not a dependency list. DARE binds to no retrieval tool — across all 271 files there is not one MCP server name, tool name, API key, or `allowed-tools` declaration. Retrieve with whatever your agent already has and hand the results in; DARE owns everything downstream, from what counts as adequate coverage to when to stop.
+
+| Server | What it does |
+| ------ | ------------ |
 | [**wiki-vault**](https://github.com/yogsoth-ai/wiki-vault) | Knowledge graph MCP server — BM25 full-text search, typed edges, batch validation. Persistent research memory. |
-| [**semantic-scholar-mcp**](https://github.com/yogsoth-ai/semantic-scholar-mcp) | Semantic Scholar API as MCP — paper lookup, citation tracing, recommendations, author search. |
+| [**semantic-scholar-mcp**](https://github.com/yogsoth-ai/semantic-scholar-mcp) | Semantic Scholar API as MCP — paper lookup, citation tracing, recommendations, author search. The one server here that exposes the citation graph as traversable edges rather than metadata. |
 
 ## Research Packages
 
-Ten freely-composable research packages. There is no fixed order — CC reads the catalog and routes across them as the research demands. Each is a standalone repo with full Campaign → Strategy → Tactic → SOP structure:
+Ten freely-composable research packages. There is no fixed order — install the ones your work needs, in whatever combination. Each is a standalone repo with full Campaign → Strategy → Tactic → SOP structure:
 
 | Package | Purpose |
 | ------- | ------- |
@@ -57,46 +83,23 @@ Ten freely-composable research packages. There is no fixed order — CC reads th
 | [knowledge-structuring](https://github.com/yogsoth-ai/knowledge-structuring) | Ontology building, causal modeling, dimensional analysis, argument mapping (wiki vault) |
 | [ara-from-context](https://github.com/yogsoth-ai/ara-from-context) | Compile a completed `context/` research record into an Agent-Native Research Artifact + Level-2 epistemic review |
 
-## Infrastructure
-
-| Repository | Role |
-| ---------- | ---- |
-| [literature-engine](https://github.com/yogsoth-ai/literature-engine) | Full-text paper reading enforcement via AlphaXiv |
-| [web-browsing](https://github.com/yogsoth-ai/web-browsing) | Rigorous web research — prevents shallow snippet-only analysis |
-| [subagent-spawning](https://github.com/yogsoth-ai/subagent-spawning) | Parallel research dispatch with full MCP tool access |
-| [context-management](https://github.com/yogsoth-ai/context-management) | Session checkpointing — 500+ line markdown snapshots for recovery |
-
----
-
 ## Get Started
 
 ```bash
-git clone https://github.com/yogsoth-ai/de-anthropocentric-research-engine.git
-cd de-anthropocentric-research-engine
-npm install
+npx skills add yogsoth-ai/de-anthropocentric-research-engine --skill '*'
 ```
 
-Copy `mcp.example.json` → `.mcp.json`, add your API keys, then:
+Run it from your own project directory, not from a clone of this repository. `--skill '*'` takes the whole graph — a partial install breaks call edges, and a tactic that loads a missing SOP has no fallback.
 
-```bash
+Nothing else to configure: no `npm install`, no API keys, no MCP config file. The library is 271 `SKILL.md` files and the agent reads them off disk.
+
+Then invoke the entry point:
+
+```text
 /de-anthropocentric-research-engine
 ```
 
-The orchestrator handles the rest.
-
----
-
-## Status
-
-**v3.2.2** — shipped. 920 skills across 10 freely-composable packages, 8 orchestrator skills, non-linear execution with backtracking. Fully self-contained: the entire skill→skill dependency graph is encoded inline in frontmatter and machine-verified closed.
-
-**Next:**
-
-- Skill ablation — systematic reduction of the skill corpus via ablation study
-- Remote / cloud execution backends — ship experiments to SSH hosts, rented GPUs, and Modal
-- Open-ended research evaluation — judging research quality with no ground truth (RFC open)
-
----
+Or state the intent in plain language and let the agent route: *"Turn this research direction into an executable Research Spec."*
 
 <p align="center">
   <sub>Apache-2.0 | <a href="https://github.com/yogsoth-ai/de-anthropocentric-research-engine">Start here</a></sub>
